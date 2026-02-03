@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - SYNTECXHUB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-brain"></i> SYNTECXHUB QUIZ</h1>
+            <p class="tagline">CREATE | THINK | SOLVE</p>
+        </header>
+
+        <div id="start-screen" class="screen active">
+            <h2>Welcome to Tech Quiz</h2>
+            <p>Test your knowledge with 10 challenging questions. Each question has 4 options. You need to select the correct answer to score points.</p>
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> Instructions:</h3>
+                <ul>
+                    <li>Total Questions: 10</li>
+                    <li>Score 1 point for each correct answer</li>
+                    <li>No negative marking</li>
+                    <li>You can navigate between questions</li>
+                    <li>View your score at the end</li>
+                </ul>
+            </div>
+            <button id="start-btn" class="btn-primary">
+                <i class="fas fa-play"></i> Start Quiz
+            </button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="question-counter">Question: 1/10</span>
+                    <span id="score-display">Score: 0</span>
+                </div>
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div id="question-container">
+                <h2 id="question-text">Question will appear here</h2>
+            </div>
+
+            <div id="options-container">
+                <!-- Options will be dynamically added here -->
+            </div>
+
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn-secondary" disabled>
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button id="next-btn" class="btn-primary">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+                <button id="submit-btn" class="btn-success">
+                    Submit <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <h2><i class="fas fa-trophy"></i> Quiz Completed!</h2>
+                <div id="score-circle">
+                    <svg width="150" height="150" viewBox="0 0 150 150">
+                        <circle cx="75" cy="75" r="65" stroke="#e0e0e0" stroke-width="10" fill="none"/>
+                        <circle id="score-circle-progress" cx="75" cy="75" r="65" stroke="#4CAF50" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-90 75 75)" stroke-dasharray="408.4" stroke-dashoffset="408.4"/>
+                        <text x="75" y="80" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">
+                            <tspan id="final-score-text">0</tspan>/<tspan id="total-questions-text">10</tspan>
+                        </text>
+                    </svg>
+                </div>
+                <p id="result-message"></p>
+                <div class="result-details">
+                    <p>Correct: <span id="correct-count">0</span></p>
+                    <p>Incorrect: <span id="incorrect-count">0</span></p>
+                    <p>Percentage: <span id="percentage">0</span>%</p>
+                </div>
+                <div class="result-actions">
+                    <button id="restart-btn" class="btn-primary">
+                        <i class="fas fa-redo"></i> Restart Quiz
+                    </button>
+                    <button id="review-btn" class="btn-secondary">
+                        <i class="fas fa-chart-bar"></i> Review Answers
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Project - 1 | Quiz App | SYNTECXHUB</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
